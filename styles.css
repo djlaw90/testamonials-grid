@@ -1,10 +1,73 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
 
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
 
 .container {
-    border: 3px solid red;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+    gap: 20px;
+    max-width: 1500px;
+    margin: 0 auto; /* Centers the grid */
+    padding: 20px; /* Adds spacing on smaller screens */
 }
+
 .card {
+    display: grid;
     border: 2px solid black;
+    max-width: 100%;
+    padding: 20px;
+}
+
+/* Grid Area Assignments */
+#daniel {
+    grid-area: daniel;
+}
+
+#jonathan {
+    grid-area: jonathan;
+}
+
+#jeanette {
+    grid-area: jeanette;
+}
+
+#patrick {
+    grid-area: patrick;
+}
+
+#kira {
+    grid-area: kira;
+}
+
+/* Tablet: 2-Column Layout */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+        grid-template-areas: 
+            "daniel daniel"
+            "jonathan kira"
+            "jeanette patrick";
+    }
+}
+
+/* Mobile: 1-Column Layout */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 column */
+        grid-template-areas: 
+            "daniel"
+            "jonathan"
+            "jeanette"
+            "patrick"
+            "kira";
+    }
 }
