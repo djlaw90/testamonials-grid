@@ -1,51 +1,122 @@
-.attribution {
-    font-size: 11px;
-    text-align: center;
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
-.attribution a {
-    color: hsl(228, 45%, 44%);
+.card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.id {
+    display: flex;
+    gap: 15px;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", serif;
+    height: 100%;
+    margin: 0;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    background-color: var(--light-gray);
+    display: grid;
+    align-items: center;    
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: auto auto;
     grid-template-areas: 
       "daniel daniel jonathan kira"
       "jeanette patrick patrick kira";
-    gap: 20px;
+    gap: 30px;
     max-width: 1500px;
     margin: 0 auto; /* Centers the grid */
     padding: 20px; /* Adds spacing on smaller screens */
 }
 
 .card {
-    display: grid;
-    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
     max-width: 100%;
-    padding: 20px;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Grid Area Assignments */
+.card-headings {
+    display: flex;
+    flex-direction: column; /* Keeps the name and title stacked */
+    justify-content: center; /* Vertically center the headings */
+}
+
+.testimonial {
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+#daniel .title, #jonathan .title, #patrick .title {
+    color: var(--light-gray);
+    opacity: 0.5;
+}
+
 #daniel {
     grid-area: daniel;
+    background-color: var(--moderate-violet);
+    color: var(--light-gray);
 }
 
 #jonathan {
     grid-area: jonathan;
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--light-gray);
 }
 
 #jeanette {
     grid-area: jeanette;
+    background-color: var(--white);
+}
+
+#jeanette .card-blockquote, #kira .card-blockquote {
+    color: var(--very-dark-grayish-blue);
+}
+
+#jeanette .title, #kira .title {
+    color: var(--very-dark-grayish-blue);
+}
+
+#jeanette .testimonial, #kira .testimonial {
+    color: var(--very-dark-grayish-blue);
+}
+
+#jeanette .name, #kira .name {
+    color: var(--very-dark-grayish-blue);
 }
 
 #patrick {
     grid-area: patrick;
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--light-gray);
 }
 
 #kira {
     grid-area: kira;
+    background-color: var(--white);
+}
+
+.card-blockquote {
+    opacity: 0.7;
 }
 
 /* Tablet: 2-Column Layout */
@@ -70,4 +141,17 @@
             "patrick"
             "kira";
     }
+}
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+    background: #f8f8f8;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
