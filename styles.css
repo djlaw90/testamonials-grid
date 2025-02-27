@@ -32,21 +32,21 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
     grid-template-rows: auto auto;
     grid-template-areas: 
       "daniel daniel jonathan kira"
       "jeanette patrick patrick kira";
     gap: 30px;
-    max-width: 1500px;
-    margin: 0 auto; /* Centers the grid */
-    padding: 20px; /* Adds spacing on smaller screens */
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     border-radius: 10px;
     max-width: 100%;
     padding: 30px;
@@ -55,8 +55,12 @@ body {
 
 .card-headings {
     display: flex;
-    flex-direction: column; /* Keeps the name and title stacked */
-    justify-content: center; /* Vertically center the headings */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-weight: 400;
 }
 
 .testimonial {
@@ -67,20 +71,20 @@ body {
 }
 
 #daniel .title, #jonathan .title, #patrick .title {
-    color: var(--light-gray);
+    color: var(--white);
     opacity: 0.5;
 }
 
 #daniel {
     grid-area: daniel;
     background-color: var(--moderate-violet);
-    color: var(--light-gray);
+    color: var(--white);
 }
 
 #jonathan {
     grid-area: jonathan;
     background-color: var(--very-dark-grayish-blue);
-    color: var(--light-gray);
+    color: var(--white);
 }
 
 #jeanette {
@@ -107,7 +111,7 @@ body {
 #patrick {
     grid-area: patrick;
     background-color: var(--very-dark-blackish-blue);
-    color: var(--light-gray);
+    color: var(--white);
 }
 
 #kira {
